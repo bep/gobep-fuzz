@@ -1,0 +1,1 @@
+{{ if modBool 10 }}FOO{{ end }}

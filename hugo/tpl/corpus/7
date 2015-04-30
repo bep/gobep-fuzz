@@ -1,0 +1,1 @@
+{{ substr "ABCDEF" 1 2 }}
