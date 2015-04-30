@@ -9,7 +9,7 @@ import (
 var t tpl.Template
 
 func init() {
-	t := tpl.New()
+	t = tpl.New()
 	t.AddInternalShortcode("inner.html", `Shortcode... {{ with index .Params 0 }}{{ . }}{{ end }}-- {{ with index .Params 1 }}{{ . }}{{ end }}- {{ with .Inner }}{{ . }}{{ end }}`)
 	t.AddInternalShortcode("sc1	.html", `sc1: {{ with index .Params 0 }}{{ . }}{{ end }}-- {{ with index .Params 1 }}{{ . }}{{ end }}-`)
 	t.AddInternalShortcode("sc2	.html", `sc1: {{ with index .Params 0 }}{{ . }}{{ end }}-- {{ with index .Params 1 }}{{ . }}{{ end }}-`)
