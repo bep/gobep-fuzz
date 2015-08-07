@@ -1,0 +1,1 @@
+{{ sanitizeurl "https://mysite.com/sub////" }}.

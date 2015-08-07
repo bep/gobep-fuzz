@@ -3,8 +3,15 @@ package tpl
 import (
 	"errors"
 	"github.com/spf13/hugo/tpl"
+	"github.com/spf13/viper"
 	"io/ioutil"
 )
+
+func init() {
+	viper.Reset()
+	viper.Set("BaseURL", "http://fuzz/")
+	viper.Set("WorkDir", "/tmp/")
+}
 
 func Fuzz(data []byte) int {
 

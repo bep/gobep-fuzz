@@ -26,3 +26,6 @@ _testmain.go
 work
 
 *-fuzz
+*.zip
+
+.DS_Store
