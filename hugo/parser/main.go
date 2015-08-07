@@ -10,6 +10,9 @@ func Fuzz(data []byte) int {
 	p, err := parser.ReadFrom(bytes.NewReader(data))
 
 	if err != nil {
+		if p != nil {
+			panic("page returned when error")
+		}
 		return 0
 	}
 
@@ -19,7 +22,14 @@ func Fuzz(data []byte) int {
 
 	m, err := p.Metadata()
 
-	if err != nil && m != nil {
+	if err != nil {
+		if m != nil {
+			panic("metadata returned when error")
+		}
+		return 0
+	}
+
+	if m != nil {
 		score++
 	}
 
